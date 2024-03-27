@@ -1,0 +1,33 @@
+.dots
+# OS
+Applications
+Library
+Documents
+Music
+Downloads
+Movies
+Public
+Pictures
+Desktop
+# Work
+.aws
+.bcdk
+.bcflow.rb
+.bundle
+.chef
+37s
+Work
+node_modules
+go
+# Not-Work
+.cargo
+.cups
+.docker
+.gem
+.ssh
+code
+bin
+etc
+tmp
+zig
+src
