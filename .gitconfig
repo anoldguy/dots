@@ -1,0 +1,127 @@
+[user]
+	name = Nathan Anderson
+	email = andnat@gmail.com
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[core]
+    # Use custom `.gitignore` and `.gitattributes`
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+    # Make `git rebase` safer on OS X
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
+
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
+
+[credential]
+
+
+[diff]
+    renames = copies
+    renameLimit = 0
+    indentHeuristic = true
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+
+[fetch]
+    prune = true
+
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+
+[include]
+    # Include extra config local to this machine
+	path = ~/.gitconfig.shipyard
+
+[log]
+    mailmap = true
+
+[mailmap]
+    file = ~/.gitmailmap
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+    renameLimit = 0
+
+[pull]
+    rebase = true
+
+[push]
+    # Make `git push` push relevant annotated tags when pushing branches out
+    followTags = true
+    autoSetupRemote = true
+
+[rebase]
+    autosquash = true
+
+[tag]
+    forceSignAnnotated = true
+
+
+# Git LFS for GitHub Desktop
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+
+[alias]
+    c = commit -m
+    ca = commit --amend
+    cbr = checkout -b
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    pl = pull
+    ps = push
+    plre = pull --rebase
+    st = status -sb
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    pr = remote prune origin
+    up = "!git remote update -p; git merge --ff-only @{u}"
+    top = "!git log --format='%an' | sort | uniq -c | sort -nr"
+    rbc = rebase --continue
+    rbi = rebase -i
+    lp = log -p
+    graphy = log --graph --pretty=format:'%h %d' --abbrev-commit --date=relative
+    vim = !vim .git/index
+    undo = reset --soft HEAD^
+    dft = difftool
+[rerere]
+	enabled = true
+[init]
+	defaultBranch = main
+
+[includeIf "gitdir:~/Work/basecamp"]
+	path = ~/Work/basecamp/.gitconfig
+
+[includeIf "gitdir:/Users"]
+	path = ~/.gitconfig.macos
+
+[includeIf "gitdir:/home"]
+	path = ~/.gitconfig.linux
