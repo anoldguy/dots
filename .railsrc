@@ -1,0 +1,29 @@
+puts "Loading #{__FILE__}"
+
+def sql(query)
+  ActiveRecord::Base.connection.select_all(query)
+end
+
+
+def victor
+  Person.find(victor_id)
+end
+
+def victor_id
+  @victor_id ||= Person.all.detect {|p| p.name.starts_with?("Victor") }.id
+end
+
+def cheryl
+  Person.find(cheryl_id)
+end
+
+def cheryl_id
+  @cheryl_id ||= Person.all.detect {|p| p.name.starts_with?("Cheryl") }.id
+end
+
+
+projectrc = File.expand_path('config/.projectrc')
+if File.exist?(projectrc)
+  puts "Loading #{projectrc}"
+  load projectrc
+end
