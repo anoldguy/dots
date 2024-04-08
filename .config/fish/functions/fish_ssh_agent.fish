@@ -32,7 +32,7 @@ function fish_ssh_agent --description "Start ssh-agent if not started yet, or us
         set -xg SSH_ENV $HOME/.ssh/environment
     end
 
-    if not __ssh_agent_is_started
+    if not cachecmd __ssh_agent_is_started
         __ssh_agent_start
     end
 end
