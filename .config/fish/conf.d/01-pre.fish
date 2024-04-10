@@ -50,17 +50,12 @@ end
 set fish_function_path (path resolve $__fish_config_dir/functions/*/) $fish_function_path
 set fish_complete_path (path resolve $__fish_config_dir/completions/*/) $fish_complete_path
 
-# Add bin directories to path.
-fish_add_path --prepend $HOME/.local/bin
-fish_add_path --prepend $HOME/bin
-
-
 # Set editor variables.
 set -gx PAGER less
 set -gx EDITOR vim
 
 # Add bits to path; once.
-fish_add_path /usr/local/sbin $HOME/bin $HOME/go/bin /opt/homebrew/bin $HOME/.cargo/bin $HOME/.rbenv/shims
+fish_add_path /usr/local/sbin $HOME/go/bin /opt/homebrew/bin $HOME/.cargo/bin $HOME/.rbenv/shims $HOME/.local/bin $HOME/bin
 
 # Source private data like credentials or work-related stuff
 if test -e $HOME/.private.config.fish
