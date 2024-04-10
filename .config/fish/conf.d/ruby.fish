@@ -1,9 +1,11 @@
-# Gate ruby stuff on presence of rbenv
-if status --is-interactive; and which rbenv >/dev/null
-    cachecmd rbenv init - | source
+if status --is-interactive
+    command -s rbenv > /dev/null; or return 1
 
-    set --export BUNDLE_PATH ".bundle/gems"
-    set --export BUNDLE_BIN ".bundle/bin"
-    set --export BUNDLER_EDITOR "code --add"
-    set --export UNSPRUNG 1
+    set -x RBENV_ROOT "$HOME/.rbenv"
+    set -x PATH $RBENV_ROOT/shims $PATH
+    set -x RBENV_SHELL fish
+
+    if test ! -d "$RBENV_ROOT/shims"; or test ! -d "$RBENV_ROOT/versions"
+        command mkdir -p $RBENV_ROOT/{shims,versions}
+    end
 end
