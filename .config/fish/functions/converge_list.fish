@@ -1,24 +1,39 @@
-function converge_list -a list_name list_command -d "Converge a list of nodes and track progress"
-    # Set default command if not provided
-    set -q list_command[1] || set list_command "sleep 2 && sudo chef-client"
+function converge_list -d "Converge a list of nodes and track progress"
+    argparse 'l/list=' 'r/reverse' 'c/command=?' -- $argv or return
 
-    touch $list_name.done
-    for host in (cat $list_name)
+    set listfile $_flag_list
+    set command $_flag_command
+    set reverse $_flag_reverse
+    # Set default command if not provided
+    set -q command[1] || set command "sleep 2 && sudo chef-client"
+
+    set -q listfile[1] || return 1
+    touch $listfile.done
+    cat $listfile | read -za raw
+    set host_list $raw
+
+    # Reverse the list if we're asked to
+    if set -q reverse[1]
+        set host_list $raw[-1..1]
+    end
+
+    for host in $host_list
         # We've been asked to stop, exit
-        if test -e $list_name.stop
+        if test -e $listfile.stop
+            echo "Stopped by $listfile.stop"
             break
         end
 
         # If we already processed this node, skip
-        if grep -q "^$host\$" $list_name.done
+        if grep -q "^$host\$" $listfile.done
             continue
         end
 
         # Process this node
         echo $host
-        ssh $host "$list_command"
+        ssh $host "$command"
         if test $status -eq 0
-            echo $host >>$list_name.done
+            echo $host >>$listfile.done
         end
     end
 end
