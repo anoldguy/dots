@@ -102,6 +102,7 @@ symbol = ""
 [nodejs]
 format = 'js:[$symbol($version )]($style) '
 symbol = ""
+disabled = true
 
 [hostname]
 ssh_only = true

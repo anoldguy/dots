@@ -17,7 +17,6 @@ test -d $__fish_cache_dir; or mkdir -p $__fish_cache_dir
 
 # Set editor variables.
 set -gx PAGER less
-set -gx VISUAL code -w
 set -gx EDITOR vim
 
 # Set browser on macOS.
