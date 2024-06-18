@@ -14,7 +14,6 @@ if status --is-interactive
     abbr -a kc kubectl config current-context
     abbr -a kde "kubectl get pods | grep Evicted | awk '{print $1}' | xargs -n 1 kubectl delete pod"
     abbr -a dsa "docker ps -aq | xargs docker stop | xargs docker rm"
-    type -q lsd && alias ls lsd
     abbr -a -- ds 'date +%Y-%m-%d'
     abbr -a -- ts 'date +%Y-%m-%dT%H:%M:%SZ'
     abbr -a -- yyyymmdd 'date +%Y%m%d'
