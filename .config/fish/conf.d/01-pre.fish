@@ -55,7 +55,7 @@ set -gx PAGER less
 set -gx EDITOR vim
 
 # Add bits to path; once.
-fish_add_path /usr/local/sbin $HOME/go/bin /opt/homebrew/bin $HOME/.cargo/bin $HOME/.rbenv/shims $HOME/.local/bin $HOME/bin
+fish_add_path /usr/local/sbin $HOME/go/bin /opt/homebrew/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/bin
 
 # Source private data like credentials or work-related stuff
 if test -e $HOME/.private.config.fish
