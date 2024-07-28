@@ -17,7 +17,6 @@ if status --is-interactive
     abbr -a -- ds 'date +%Y-%m-%d'
     abbr -a -- ts 'date +%Y-%m-%dT%H:%M:%SZ'
     abbr -a -- yyyymmdd 'date +%Y%m%d'
-    abbr -a -- code Zed
 end
 
 # no need to run over-and-over
