@@ -1,6 +1,7 @@
 [user]
 	name = Nathan Anderson
 	email = andnat@gmail.com
+
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
@@ -29,7 +30,6 @@
     precomposeunicode = false
 
 [credential]
-
 
 [diff]
     renames = copies
@@ -82,7 +82,6 @@
 [tag]
     forceSignAnnotated = true
 
-
 # Git LFS for GitHub Desktop
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
@@ -114,22 +113,26 @@
     dft = difftool
 [rerere]
 	enabled = true
+
 [init]
 	defaultBranch = main
-
-[includeIf "gitdir:~/Work/basecamp"]
-	path = ~/Work/basecamp/.gitconfig
 
 [includeIf "gitdir:/Users"]
 	path = ~/.gitconfig.macos
 
 [includeIf "gitdir:/home"]
 	path = ~/.gitconfig.linux
+
+[includeIf "gitdir:**/code/epicgames/**"]
+	path = ~/.gitconfig.epic
+
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
+
 [gist]
 	home = /home/nathan/gists
