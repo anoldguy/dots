@@ -10,3 +10,6 @@ keybind = super+shift+]=next_tab
 gtk-titlebar = false
 gtk-titlebar-hide-when-maximized = true
 window-inherit-working-directory = false
+
+# Fix for async issue in kernel
+async-backend = epoll
