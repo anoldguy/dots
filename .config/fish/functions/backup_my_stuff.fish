@@ -1,7 +1,8 @@
-function backup_my_stuff --description "Backs up my stuff to the homelab using today's date."
-    set session_date $(date +"%Y-%m-%d_%H%M")
+function backup_my_stuff --description "Backs up my stuff using restic"
+    set -x RESTIC_REPOSITORY /backups/nathan/backups/restic
+    set -x RESTIC_PASSWORD (gum input --password --placeholder "Enter `restic` password")
     for dir in $(jq -r '.local[]' ~/.config/backup_dirs.json)
-      ssh homelab mkdir -p ~/backups/nathan-$session_date
-      rsync -avz $dir homelab:~/backups/nathan-$session_date/
+      echo "About to backup ~/$dir"
+      restic backup --skip-if-unchanged ~/$dir
     end
 end

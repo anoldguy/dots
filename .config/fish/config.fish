@@ -1,4 +1,5 @@
 if [ (tty) = "/dev/tty1" ]
-	systemctl --user import-environment PATH
-	uwsm check may-start && uwsm start default
+    systemctl --user import-environment PATH
+    set -x XDG_CURRENT_DESKTOP sway:wlroots
+    exec sway
 end
