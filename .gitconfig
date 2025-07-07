@@ -29,7 +29,13 @@
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
     precomposeunicode = false
 
-[credential]
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
 
 [diff]
     renames = copies
@@ -52,10 +58,6 @@
 [help]
     # Automatically correct and execute mistyped commands
     autocorrect = 1
-
-[include]
-    # Include extra config local to this machine
-	path = ~/.gitconfig.shipyard
 
 [log]
     mailmap = true
@@ -122,17 +124,3 @@
 
 [includeIf "gitdir:/home"]
 	path = ~/.gitconfig.linux
-
-[includeIf "gitdir:**/code/epicgames/**"]
-	path = ~/.gitconfig.epic
-
-[credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
-
-[credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
-
-[gist]
-	home = /home/nathan/gists
