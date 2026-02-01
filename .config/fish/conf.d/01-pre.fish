@@ -8,21 +8,15 @@ set brewcmds (
     )
 test (count $brewcmds) -gt 0 || return 1
 
-# Set paths to cache.
-set -q __fish_cache_dir || set -gx __fish_cache_dir $HOME/.cache/fish
-set brew_init $__fish_cache_dir/brew_init.fish
-
-# Remove cached files older than one day.
-find $__fish_cache_dir -depth 1 -type f -mtime +1 -delete &>/dev/null
-
-# Cache brew shellenv fish command.
-if not test -r $brew_init
-    mkdir -p (path dirname $brew_init)
-    cachecmd $brewcmds[1] shellenv > $brew_init
+# Remove cached files older than one day (throttled to once per day).
+set -l cache_cleanup_marker $__fish_cache_dir/.last_cleanup
+if not test -f $cache_cleanup_marker; or test -n (find $cache_cleanup_marker -mtime +1 2>/dev/null)
+    find $__fish_cache_dir -maxdepth 1 -type f -mtime +1 -delete &>/dev/null
+    touch $cache_cleanup_marker
 end
 
 # Init brew
-source $brew_init
+cachecmd $brewcmds[1] shellenv | source
 
 # Add homebrew completions
 if test -e $HOMEBREW_PREFIX/share/fish/completions

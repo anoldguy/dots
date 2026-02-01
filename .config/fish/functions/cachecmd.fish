@@ -1,5 +1,4 @@
 function cachecmd --description "Cache a command"
-    set_xdg_basedirs
     set --local cmdname (
         string join '-' $argv |
         string replace -a '/' '_' |

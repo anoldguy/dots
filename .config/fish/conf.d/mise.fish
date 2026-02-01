@@ -1,1 +1,1 @@
-mise activate fish | source
+type -q mise && cachecmd mise activate fish | source

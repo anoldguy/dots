@@ -19,7 +19,7 @@ end
 
 function fish_ssh_agent --description "Start ssh-agent if not started yet, or uses already started ssh-agent."
     set -q SSH_ENV; or set -xg SSH_ENV $HOME/.ssh/environment
-    source $SSH_ENV > /dev/null
+    test -f $SSH_ENV; and source $SSH_ENV > /dev/null
 
     __ssh_agent_is_started; or __ssh_agent_start
 end

@@ -1,1 +1,1 @@
-type -q work && work activate | source
+type -q work && cachecmd work activate | source
