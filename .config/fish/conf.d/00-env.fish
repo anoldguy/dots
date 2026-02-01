@@ -33,3 +33,4 @@ set -g IWD $PWD
 
 # Other homebrew vars.
 set -gx HOMEBREW_NO_ANALYTICS 1
+set -gx HSA_OVERRIDE_GFX_VERSION 11.0.0
