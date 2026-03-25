@@ -1,5 +1,6 @@
 font-family = VictorMono 
 font-size = 12
+theme = monokai-pro
 
 # Keybinds
 keybind = super+shift+k=clear_screen
