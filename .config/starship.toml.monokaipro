@@ -102,7 +102,7 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_yellow)]($style)'
 
 [git_status]
 style = "bg:color_yellow"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 conflicted = '[!$count](fg:red bg:color_yellow)'
 untracked = '?$count'
 modified = '[*$count](fg:red bg:color_yellow)'
@@ -114,52 +114,52 @@ behind = '⇣${count}'
 [nodejs]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [c]
 symbol = " "
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [php]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [java]
 symbol = " "
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [haskell]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [python]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [ruby]
 symbol = "🍒"
 style = "bg:color_aqua"
-format = '[[ $symbol($version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol($version) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [docker_context]
 symbol = ""
