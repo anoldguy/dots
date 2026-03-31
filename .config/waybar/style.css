@@ -1,0 +1,211 @@
+/*
+ * Waybar - Monokai Pro
+ *
+ * bg:      #2d2a2e    sidebar: #221f22    panel:   #403e41
+ * border:  #19181a    fg:      #fcfcfa    muted:   #727072
+ * red:     #ff6188    orange:  #fc9867    yellow:  #ffd866
+ * green:   #a9dc76    cyan:    #78dce8    purple:  #ab9df2
+ */
+
+* {
+    font-family: "VictorMono Nerd Font", "Symbols Nerd Font Mono", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #221f22;
+    color: #fcfcfa;
+    border-bottom: 0.0625rem solid #19181a;
+}
+
+/* START SIZING */
+
+/* Shared pill style for all modules */
+#workspaces,
+#mpris,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#idle_inhibitor,
+#tray,
+#custom-notification {
+    background-color: #2d2a2e;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0.25rem;
+}
+
+/* ---- Left: Workspaces ---- */
+
+#workspaces {
+    padding: 0.7rem 1rem;
+    margin-left: 1rem;
+}
+
+#workspaces button {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    min-width: 1rem;
+    min-height: 1rem;
+    border-radius: 1rem;
+    margin: 0 0.4rem;
+    padding: 0;
+}
+
+#workspaces button.active {
+    border-radius: 1rem;
+    min-width: 2.5rem;
+}
+/* END OF SIZING */
+
+/* Per-workspace dot colors: muted when inactive, full accent when active */
+#workspaces button:nth-child(1) {
+    background-color: rgba(255, 97, 136, 0.55);
+}
+#workspaces button:nth-child(2) {
+    background-color: rgba(252, 152, 103, 0.55);
+}
+#workspaces button:nth-child(3) {
+    background-color: rgba(255, 216, 102, 0.55);
+}
+#workspaces button:nth-child(4) {
+    background-color: rgba(169, 220, 118, 0.55);
+}
+#workspaces button:nth-child(5) {
+    background-color: rgba(120, 220, 232, 0.55);
+}
+#workspaces button:nth-child(6) {
+    background-color: rgba(171, 157, 242, 0.55);
+}
+#workspaces button:nth-child(7) {
+    background-color: rgba(255, 97, 136, 0.55);
+}
+#workspaces button:nth-child(8) {
+    background-color: rgba(252, 152, 103, 0.55);
+}
+
+#workspaces button:nth-child(1).active {
+    background-color: #ff6188;
+}
+#workspaces button:nth-child(2).active {
+    background-color: #fc9867;
+}
+#workspaces button:nth-child(3).active {
+    background-color: #ffd866;
+}
+#workspaces button:nth-child(4).active {
+    background-color: #a9dc76;
+}
+#workspaces button:nth-child(5).active {
+    background-color: #78dce8;
+}
+#workspaces button:nth-child(6).active {
+    background-color: #ab9df2;
+}
+#workspaces button:nth-child(7).active {
+    background-color: #ff6188;
+}
+#workspaces button:nth-child(8).active {
+    background-color: #fc9867;
+}
+
+#workspaces button.urgent {
+    color: #ff6188;
+    background-color: rgba(255, 97, 136, 0.15);
+}
+
+#workspaces button:hover {
+    background: #403e41;
+    color: #fcfcfa;
+}
+
+/* ---- Center: MPRIS ---- */
+
+#mpris {
+    color: #ab9df2;
+}
+
+/* ---- Right: System modules ---- */
+
+#clock {
+    color: #fcfcfa;
+}
+
+/* ---- Right: System modules ---- */
+
+#cpu {
+    color: #fc9867;
+}
+
+#memory {
+    color: #ffd866;
+}
+
+#pulseaudio {
+    color: #a9dc76;
+}
+
+#pulseaudio.muted {
+    color: #727072;
+}
+
+#network {
+    color: #78dce8;
+}
+
+#network.disconnected {
+    color: #ff6188;
+}
+
+#idle_inhibitor {
+    color: #727072;
+}
+
+#idle_inhibitor.activated {
+    color: #ffd866;
+}
+
+#tray {
+    color: #fcfcfa;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-notification {
+    color: #727072;
+    margin-right: 0.5rem;
+}
+
+#custom-notification.notification {
+    color: #ff6188;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+    color: #727072;
+}
+
+/* ---- Tooltips ----
+
+tooltip {
+    background-color: #2d2a2e;
+    border: 0.0625rem solid #403e41;
+    border-radius: 0.25rem;
+    color: #fcfcfa;
+}
+
+tooltip label {
+    color: #fcfcfa;
+}
+*/
