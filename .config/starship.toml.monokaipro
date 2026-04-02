@@ -102,7 +102,7 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_yellow)]($style)'
 
 [git_status]
 style = "bg:color_yellow"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_yellow)]($style)'
 conflicted = '[!$count](fg:red bg:color_yellow)'
 untracked = '?$count'
 modified = '[*$count](fg:red bg:color_yellow)'

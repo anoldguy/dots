@@ -8,9 +8,8 @@
  */
 
 * {
-    font-family: "VictorMono Nerd Font", "Symbols Nerd Font Mono", monospace;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: "VictorMono", "Symbols Nerd Font Mono";
+    font-size: 13px;
     min-height: 0;
 }
 
